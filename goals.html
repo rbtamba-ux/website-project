@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initialscale=1.0">
+<title>My Goals as a Student</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<h1>Welcome to My Personal Website</h1>
+</header>
+<nav>
+<ul>
+<li><a href="index.html">HOME</a></li>
+<li class="dropdown">
+<a href="#" class="dropbtn">ABOUT</a>
+<div class="dropdown-content">
+<a href="skills.html">Skills I'm Developing</a>
+<a href="goals.html">My Goals as a Student</a>
+<a href="funfacts.html">Fun Facts About Me</a>
+</div>
+</li>
+<li><a href="gallery.html">GALLERY</a></li>
+<li><a href="contact.html">CONTACT</a></li>
+<a href="javascript:void(0);" class="logout-button"
+onclick="confirmLogout()">LOG OUT</a>
+</ul>
+</nav>
+<section id="section2"></section>
+<section id="drop">
+<h2>My Goals as an IT Student</h2>
+<p style="text-align: center;">These are my aim or desired 
+result plans to achieve!</p>
+<div class="goal-grid">
+<div class="goal-card" onclick="toggleGoalDetails(1)">
+<div class="goal-header" style="background-color:
+lightSalmon;"><strong>Career Preparation</strong></div>
+<p><strong>Practicing skills needed to succeed.
+</strong></p>
+<div class="goal-details" id="goal1-details">
+<p>By focusing on these Career Preparation,
+I'm aiming to earn industry-recognize certifiction, 
+secure an intership or part-time job, and also being
+actively participate in coding challenge to hone my 
+analytical and troubleshooting abilities.</p>
+</div>
+</div>
+<div class="goal-card" onclick="toggleGoalDetails(1)">
+<div class="goal-header" style="background-color:
+violet;"><strong>Personal Growth</strong></div>
+<p>To ensure, maintain and balance my development</p>
+<div class="goal-details" id="goal2-details">
+<p>By setting these Personal Growth, I wanna set boundaries
+to ensure my time for exercise, hobbies, and social activities 
+to prevent burnout.</p></p>
+</div>
+</div>
+<div class="goal-card" onclick="toggleGoalDetails(2)">
+<div class="goal-header" style="background-color:
+steelBlue;"><strong>Skill Acquisition</strong></div>
+<p>To master a specific in-demand software or programming language</p>
+<div class="goal-details" id="goal3-details">
+<p>I strive to earn basic industry certification to boost my resume, 
+and also to participate in organization or a coding 
+club to build practical skills and a support network.</p>
+</div>
+</div>
+<div class="goal-card" onclick="toggleGoalDetails(2)">
+<div class="goal-header" style="background-color:
+mediumSeaGreen;"><strong>Life Goals</strong></div>
+<p>To achieve financial independence and begin saving effectively 
+for a long-term security.</p>
+<div class="goal-details" id="goal4-details">
+<p>My goal is to become a mentor to junior students once I 
+established my career, giving back to my communtiy, build a strong 
+work-life balance that allows for professional success and Personal 
+fulfillment through hobbies, travel, and a family time</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<footer>
+<p>&copy; 2025 Ria Mae Tamba. All rights reserved.</p>
+</footer>
+<div class="footer-divider"></div> <!-- Orange line -->
+<!-- Embedded JavaScript -->
+<script>
+// Function to toggle details for both cards in a row
+function toggleGoalDetails(group) {
+const details1 = document.getElementById('goal' + (group * 2 -1) + '-details');
+const details2 = document.getElementById('goal' + (group * 2)+ '-details');
+// Toggle visibility for the paired goals
+details1.classList.toggle('active');
+details2.classList.toggle('active');
+}
+</script>
+<script>
+// Logout function with confirmation
+function confirmLogout() {
+// Show a confirmation message to the user
+const confirmLogout = confirm("Are you sure you want to logout?");
+// If the user confirms, proceed with logging out
+if (confirmLogout) {
+// Mark the user as logged out in localStorage (if used)
+localStorage.removeItem('isLoggedIn'); // Or any other keysrelated to login credentials
+// Redirect to the login page
+window.location.href = 'login.html';
+} else {
+// If the user cancels, do nothing
+return;
+}
+}
+</script>
+</body>
+</html>
